@@ -1,13 +1,11 @@
-const formulario = document.getElementById('formulario-contacto');
-
-formulario.addEventListener('submit', (event) => {
+document.getElementById('formulario-contacto').addEventListener('submit', async function(event) {
   event.preventDefault();
 
   const nombre = document.getElementById('nombre').value;
   const correo = document.getElementById('correo').value;
   const mensaje = document.getElementById('mensaje').value;
 
-  if (nombre === '' || correo === '' || mensaje === '') {
+  if (!nombre || !correo || !mensaje) {
     alert('Por favor, completa todos los campos.');
     return;
   }
@@ -17,35 +15,18 @@ formulario.addEventListener('submit', (event) => {
     return;
   }
 
-  enviarFormulario();
-});
-
-function validarCorreo(correo) {
-  const regex = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return regex.test(correo);
-}
-
-async function enviarFormulario() {
-  const data = {
-    nombre: nombre,
-    correo: correo,
-    mensaje: mensaje
-  };
-
-  const url = 'https://formspree.io/f/manwnrnp'; 
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  };
+  const data = { nombre, correo, mensaje };
 
   try {
-    const response = await fetch(url, options);
-    const result = await response.json();
+    const response = await fetch('https://formspree.io/f/manwnrnp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-    if (result.estado === 'ok') {
+    if (response.ok) {
       mostrarMensajeExito('¡Formulario enviado exitosamente!');
     } else {
       mostrarMensajeError('Error al enviar el formulario.');
@@ -54,26 +35,32 @@ async function enviarFormulario() {
     console.error(error);
     mostrarMensajeError('Error al enviar el formulario.');
   }
+});
+
+function validarCorreo(correo) {
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(correo);
 }
 
 function mostrarMensajeExito(mensaje) {
   const mensajeExito = document.createElement('p');
   mensajeExito.textContent = mensaje;
-  mensajeExito.className = 'mensaje-exito'; 
-  formulario.appendChild(mensajeExito);
+  mensajeExito.className = 'mensaje-exito';
+  document.getElementById('formulario-contacto').appendChild(mensajeExito);
 
   setTimeout(() => {
-    formulario.removeChild(mensajeExito);
+    mensajeExito.remove();
   }, 5000);
 }
 
 function mostrarMensajeError(mensaje) {
   const mensajeError = document.createElement('p');
   mensajeError.textContent = mensaje;
-  mensajeError.className = 'mensaje-error'; 
-  formulario.appendChild(mensajeError);
+  mensajeError.className = 'mensaje-error';
+  document.getElementById('formulario-contacto').appendChild(mensajeError);
 
   setTimeout(() => {
-    formulario.removeChild(mensajeError);
+    mensajeError.remove();
   }, 5000);
 }
+
