@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="estiloweb.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Mi Perfil</h1>
+
+  <section id="sobre-mi">
+    <h2>Sobre Mí</h2>
+    <p>Hola! Mucho gusto, bienvenidos a mi perfil. Mi nombre es María Rivas, tengo 21 años de edad. Un dato curioso sobre mí es que nací el 24 de diciembre y otro dato curioso sobre mí es que sigo esperando que 1D vuelva, ah, y que la vinotinto gane. Mano tengo fé.</p>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiencia</h2>
+    <p>No tengo experiencia laboral, mi mami me mantiene hasta que me gradue.</p>
+  </section>
+
+  <section id="educacion">
+    <h2>Educación</h2>
+    <p>Me gradúe del liceo en el 2018 y en ese mismo año estudie la carrera de Derecho en la Universidad Santa María, estuve ahí hasta el 4to semestre y con la pandemia, me tocó salirme. Luego pensé que eso era una carrera que no me serviría para el futuro si me iba del país, y aquí estoy estudiando un TSU en informática. Por cierto, profesora tengo fé de que ganemos las elecciones y así volver a mi carrera de Derecho.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctame</h2>
+    <form id="formulario-contacto">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje aquí" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

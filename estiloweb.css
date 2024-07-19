@@ -1,0 +1,112 @@
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #efa5ea;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(33, 7, 5);
+  font-style: italic;
+}
+
+section {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgb(247, 255, 174);
+  border-bottom: 8px;
+  max-width: 600px;
+}
+
+h2 {
+  text-align: center;
+  color: #4b0042;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section {
+    max-width: 100%;
+  }
+}
+
+section#contacto {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+
+#formulario-contacto {
+  width: 80%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  background-color: white; 
+  border: 1px solid #ccc; 
+}
+
+label {
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: bold; 
+}
+
+input {
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+}
+
+textarea {
+  width: 100%; 
+  height: 150px; 
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+}
+
+button {
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+button:hover {
+  background-color: #45a049; 
+}
+
+.mensaje-exito {
+  background-color: #d4ffdf; 
+  color: #4caf50; 
+  padding: 10px; 
+  border-radius: 5px; 
+  margin-bottom: 10px; 
+}
+
+.mensaje-error {
+  background-color: #f44336; 
+  color: white
+}
