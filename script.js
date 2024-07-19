@@ -32,7 +32,7 @@ async function enviarFormulario() {
     mensaje: mensaje
   };
 
-  const url = 'https://magicorndark.github.io/mi-perfil-web/'; 
+  const url = 'https://formspree.io/f/manwnrnp'; 
   const options = {
     method: 'POST',
     headers: {
