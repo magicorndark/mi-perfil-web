@@ -32,7 +32,7 @@ async function enviarFormulario() {
     mensaje: mensaje
   };
 
-  const url = 'https://tu-url-de-destino'; // Reemplaza con la URL real
+  const url = 'https://magicorndark.github.io/mi-perfil-web/'; 
   const options = {
     method: 'POST',
     headers: {
