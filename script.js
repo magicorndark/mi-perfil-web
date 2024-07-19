@@ -59,7 +59,7 @@ async function enviarFormulario() {
 function mostrarMensajeExito(mensaje) {
   const mensajeExito = document.createElement('p');
   mensajeExito.textContent = mensaje;
-  mensajeExito.className = 'Mensaje Exitoso'; 
+  mensajeExito.className = 'mensaje-exito'; 
   formulario.appendChild(mensajeExito);
 
   setTimeout(() => {
@@ -70,7 +70,7 @@ function mostrarMensajeExito(mensaje) {
 function mostrarMensajeError(mensaje) {
   const mensajeError = document.createElement('p');
   mensajeError.textContent = mensaje;
-  mensajeError.className = 'Mensaje error'; 
+  mensajeError.className = 'mensaje-error'; 
   formulario.appendChild(mensajeError);
 
   setTimeout(() => {
